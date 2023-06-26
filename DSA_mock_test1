@@ -1,0 +1,48 @@
+Q1.Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+
+Note that you must do this in-place without making a copy of the array.
+
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+
+Example 2:
+Input: nums = [0]
+Output: [0]
+
+
+solution:
+arr=[0,1,0,3,12]
+c=0
+for i in range(len(arr)):
+        if arr[i]!=0:
+            arr[c],arr[i]=arr[i],arr[c]
+            c+=1
+print(arr)
+
+
+Q2.First Unique Character in a String
+
+Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
+
+Example 1:
+Input: s = "leetcode"
+Output: 0
+
+Example 2:
+Input: s = "loveleetcode"
+Output: 2
+
+Example 3:
+Input: s = "aabb"
+Output: -1
+
+
+solution:
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        for i,j in enumerate(s):
+            if s.count(j)==1:
+                return i
+                break
+        return -1
